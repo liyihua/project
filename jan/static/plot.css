@@ -1,0 +1,79 @@
+.yaxisLabel {
+	top: 50%;
+	left: 555px;
+	transform: rotate(-90deg);
+	-o-transform: rotate(-90deg);
+	-ms-transform: rotate(-90deg);
+	-moz-transform: rotate(-90deg);
+	-webkit-transform: rotate(-90deg);
+	transform-origin: 0 0;
+	-o-transform-origin: 0 0;
+	-ms-transform-origin: 0 0;
+	-moz-transform-origin: 0 0;
+	-webkit-transform-origin: 0 0;
+}
+
+.yaxisLeftLabel {
+	top: 50%;
+	left: -25px;
+	transform: rotate(-90deg);
+	-o-transform: rotate(-90deg);
+	-ms-transform: rotate(-90deg);
+	-moz-transform: rotate(-90deg);
+	-webkit-transform: rotate(-90deg);
+	transform-origin: 0 0;
+	-o-transform-origin: 0 0;
+	-ms-transform-origin: 0 0;
+	-moz-transform-origin: 0 0;
+	-webkit-transform-origin: 0 0;
+}
+
+.axisLabel {
+	position: absolute;
+	text-align: center;
+	font-size: 15px;
+	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+#connect {
+	left: 15px;
+	top: 15px;
+}
+#third_graph {
+	position: absolute;
+	left: 50px;
+	top: 550px;
+	width: 400px;
+	height: 300px;
+}
+
+#data_container {
+
+	height: 400px;
+}
+#heatIndex_container,#hum_data,#temp_data,#heatIndex,#placeholder {
+	height: 350px;
+}
+
+.flot-text {
+	font-size: 13px !important;
+}
+table {
+	font-size: 13px !important;
+}
+#temp_hum {
+height:400px;
+}
+/*
+#heatIndexTableLegend {
+	position: absolute;
+	top: 800px;
+	left: 1050px;
+	font-size: smaller;
+	color: #545454;
+}
+*/
+.box-content{
+	margin:10px 25px 10px 25px;
+	
+}

@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<!-- start: Meta -->
+		<meta charset="utf-8">
+		<title>Home</title>
+		<!-- end: Meta -->
+
+		<!-- start: CSS -->
+		<link id="bootstrap-style" href="static/css/bootstrap.min.css" rel="stylesheet">
+		<link href="static/css/bootstrap-responsive.min.css" rel="stylesheet">
+		<link id="base-style" href="static/css/style.css" rel="stylesheet">
+		<link id="base-style-responsive" href="static/css/style-responsive.css" rel="stylesheet">
+		<link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800&subset=latin,cyrillic-ext,latin-ext' rel='stylesheet' type='text/css'>
+
+		<link rel="stylesheet" href="static/plot.css" />
+		<!-- end: CSS -->
+
+		<!-- The HTML5 shim, for IE6-8 support of HTML5 elements -->
+		<!--[if lt IE 9]>
+		<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+		<link id="ie-style" href="css/ie.css" rel="stylesheet">
+		<![endif]-->
+
+		<!--[if IE 9]>
+		<link id="ie9style" href="css/ie9.css" rel="stylesheet">
+		<![endif]-->
+
+		<!-- start: Favicon
+		<link rel="shortcut icon" href="img/favicon.ico">
+		end: Favicon -->
+
+	</head>
+	<body>
+		<!-- start: Header -->
+		<div class="navbar">
+			<div class="navbar-inner">
+				<div class="container-fluid">
+					<a class="btn btn-navbar" data-toggle="collapse" data-target=".top-nav.nav-collapse,.sidebar-nav.nav-collapse"> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </a>
+					<a class="brand" href="index.html"><span>Central Station Interface</span></a>
+
+					<!-- start: Header Menu -->
+					<div class="nav-no-collapse header-nav">
+						<ul class="nav pull-right">
+							<li class="dropdown hidden-phone">
+								<a class="btn dropdown-toggle" data-toggle="dropdown" href="#"> <i class="halflings-icon white warning-sign"></i> </a>
+								<ul class="dropdown-menu notifications" style="width:300px">
+									<li class="dropdown-menu-title" style="width:300px">
+										<span>2 alerts</span>
+										<a href="#refresh"><i class="icon-repeat"></i></a>
+									</li>
+									<li class="warning" style="width:300px">
+										<a href="#"> <span class="icon red"><i class="icon-warning-sign"></i></span> <span class="message">Heat exposure alert for wheelchair 3</span> <span class="time">1 hour</span> </a>
+									</li>
+									<li style="width:300px">
+										<a href="#"> <span class="icon green"><i class="icon-warning-sign"></i></span> <span class="message">Heat exposure alert for wheelchair 1</span> <span class="time">2 hour</span> </a>
+									</li>
+									<li class="dropdown-menu-sub-footer" style="width:300px">
+										<a>View all alerts</a>
+									</li>
+								</ul>
+							</li>
+
+							<li>
+								<a class="btn" href="#"> <i class="halflings-icon white wrench"></i> </a>
+							</li>
+
+							<!-- start: User Dropdown -->
+							<li class="dropdown">
+								<a class="btn dropdown-toggle" data-toggle="dropdown" href="#"> <i class="halflings-icon white user"></i> Nurse <span class="caret"></span> </a>
+							</li>
+							<!-- end: User Dropdown -->
+						</ul>
+					</div>
+					<!-- end: Header Menu -->
+
+				</div>
+			</div>
+		</div>
+		<!-- start: Header -->
+
+		<div class="container-fluid-full">
+			<div class="row-fluid">
+
+				<!-- start: Main Menu -->
+				<div id="sidebar-left" class="span2">
+					<div class="nav-collapse sidebar-nav">
+						<ul class="nav nav-tabs nav-stacked main-menu">
+							<li>
+								<a href="index.html"><i class="icon-bar-chart"></i><span class="hidden-tablet"> All wheelchairs</span></a>
+							</li>
+							<li>
+								<a class="dropmenu" href="#"><i class="icon-folder-close-alt"></i><span class="hidden-tablet"> Individual Wheelchair</span><span class="label label-important"> 4 </span></a>
+								<ul>
+									<li>
+										<a class="submenu" href="show_wheelchair.html?id=1"><i class="icon-signal"></i><span class="hidden-tablet"> Wheelchair 1</span></a>
+									</li>
+									<li>
+										<a class="submenu" href="show_wheelchair.html?id=2"><i class="icon-signal"></i><span class="hidden-tablet"> Wheelchair 2</span></a>
+									</li>
+									<li>
+										<a class="submenu" href="show_wheelchair.html?id=3"><i class="icon-signal"></i><span class="hidden-tablet"> Wheelchair 3</span></a>
+									</li>
+									<li>
+										<a class="submenu" href="show_wheelchair.html?id=4"><i class="icon-signal"></i><span class="hidden-tablet"> Wheelchair 4</span></a>
+									</li>
+								</ul>
+							</li>
+						</ul>
+					</div>
+				</div>
+				<!-- end: Main Menu -->
+
+				<noscript>
+					<div class="alert alert-block span10">
+						<h4 class="alert-heading">Warning!</h4>
+						<p>
+							You need to have <a href="http://en.wikipedia.org/wiki/JavaScript" target="_blank">JavaScript</a> enabled to use this site.
+						</p>
+					</div>
+				</noscript>
+
+				<!-- start: Content -->
+				<div id="content" class="span10">
+
+					<ul class="breadcrumb">
+						<li>
+							<i class="icon-home"></i>
+							<a href="index.html">Home</a>
+							<i class="icon-angle-right"></i>
+						</li>
+						<li>
+							<a href="#">Individual Wheelchair</a>
+							<i class="icon-angle-right"></i>
+						</li>
+						<li>
+							<a href="#">Wheelchair <span id ="breadcrumb_id"></span></a>
+
+						</li>
+					</ul>
+
+					<button id="connect" class="btn" type="button">
+						get Data
+					</button>
+
+					<br>
+					<br>
+					<div class="row-fluid sortable">
+						<div class="box span12">
+							<div class="box-header">
+								<h2><i class="halflings-icon list-alt"></i><span class="break"></span>Heat Exposure</h2>
+
+								<div class="box-icon">
+									<a href="#" class="btn-setting"><i class="halflings-icon wrench"></i></a>
+
+								</div>
+
+							</div>
+							<div class="box-content">
+								<table style="position:absolute;top:15px;right:17px;;font-size:smaller;color:#545454">
+									<tbody>
+
+										<tr>
+											<td class="legendColorBox">
+											<div style="border:1px solid #ccc;padding:1px">
+												<div style="width:4px;height:0;border:5px solid rgb(255,225,0);overflow:hidden"></div>
+											</div></td><td class="legendLabel">Caution</td>
+										</tr>
+										<tr>
+											<td class="legendColorBox">
+											<div style="border:1px solid #ccc;padding:1px">
+												<div style="width:4px;height:0;border:5px solid rgb(255,140,0);overflow:hidden"></div>
+											</div></td><td class="legendLabel">Extreme Caution</td>
+										</tr>
+										<tr>
+											<td class="legendColorBox">
+											<div style="border:1px solid #ccc;padding:1px">
+												<div style="width:4px;height:0;border:5px solid rgb(235, 60, 0);overflow:hidden"></div>
+											</div></td><td class="legendLabel">Danger</td>
+										</tr>
+									</tbody>
+								</table>
+								<div id="heat_index_bar" style="height:100px;"></div>
+								<br>
+								<p>
+									Total heat exposure: <span id="total"> 0 </span> minutes
+								</p>
+								<p>
+									(1 minute in Extreme Caution counts as 2 minutes of heat exposure, in Danger as 4 minutes of heat exposure.)
+								</p>
+							</div>
+						</div>
+					</div><!--/row-->
+
+					<div class="row-fluid">
+
+						<div class="box span7">
+							<div class="box-header">
+								<h2><i class="halflings-icon list-alt"></i><span class="break"></span>Temp/Hum</h2>
+
+							</div>
+							<div class="box-content">
+								<div id="data_container" class="demo-placeholder"></div>
+							</div>
+						</div>
+
+						<div class="box span5" id ="second_graph">
+							<div class="box-header">
+								<h2><i class="halflings-icon list-alt"></i><span class="break"></span>Heat Index</h2>
+
+							</div>
+							<div class="box-content">
+								<div id="heatIndex_container" class="demo-placeholder"></div>
+
+								<p>
+									Wheelchair <span id ="wheelchair_id"></span> has been in range <span id="range"></span> for <span id="duration"></span> minutes.
+								</p>
+							</div>
+						</div>
+					</div>
+
+				</div><!--/.fluid-container-->
+
+				<!-- end: Content -->
+			</div><!--/#content.span10-->
+		</div><!--/fluid-row-->
+
+		<div class="modal hide fade" id="myModal">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal">
+					×
+				</button>
+				<h3>Settings</h3>
+			</div>
+			<div class="modal-body">
+				<p>
+					Here settings can be configured...
+				</p>
+			</div>
+			<div class="modal-footer">
+				<a href="#" class="btn" data-dismiss="modal">Close</a>
+				<a href="#" class="btn btn-primary">Save changes</a>
+			</div>
+		</div>
+
+		<div class="clearfix"></div>
+
+		<footer>
+
+		</footer>
+
+		<!-- start: JavaScript-->
+
+		<script language="javascript" type="text/javascript" src="static/flot/jquery.js"></script>
+		<script type="text/javascript" src="static/flot/jquery.flot.js"></script>
+		<script type="text/javascript" src="static/flot/jquery.flot.threshold.js"></script>
+		<script type="text/javascript" src="static/flot/jquery.flot.stack.js"></script>
+		<script type="text/javascript" src="static/flot/jquery.flot.time.js"></script>
+
+		<script src="static/plot.js"></script>
+		<script src="static/js/jquery-migrate-1.0.0.min.js"></script>
+
+		<script src="static/js/jquery-ui-1.10.0.custom.min.js"></script>
+
+		<script src="static/js/jquery.ui.touch-punch.js"></script>
+
+		<script src="static/js/modernizr.js"></script>
+
+		<script src="static/js/bootstrap.min.js"></script>
+
+		<script src="static/js/jquery.cookie.js"></script>
+
+		<script src='static/js/fullcalendar.min.js'></script>
+
+		<script src='static/js/jquery.dataTables.min.js'></script>
+
+		<script src="static/js/excanvas.js"></script>
+
+		<script src="static/js/jquery.chosen.min.js"></script>
+
+		<script src="static/js/jquery.uniform.min.js"></script>
+
+		<script src="static/js/jquery.noty.js"></script>
+
+		<script src="static/js/jquery.raty.min.js"></script>
+
+		<script src="static/js/jquery.gritter.min.js"></script>
+
+		<script src="static/js/jquery.masonry.min.js"></script>
+
+		<script src="static/js/jquery.sparkline.min.js"></script>
+
+		<script src="static/js/custom.js"></script>
+		<!-- end: JavaScript-->
+
+	</body>
+</html>
